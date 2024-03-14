@@ -52,7 +52,7 @@ const CustomImage = styled(Image)``;
 const Top = styled.div`
   z-index: 1;
 `;
-const CustomCard = styled(Card)`
+const CustomCard = styled(Card)<{ isDarkMode: boolean }>`
   /* Custom CSS for the Card component */
 
   min-width: 166px;

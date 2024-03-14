@@ -32,7 +32,7 @@ const CustomImageLogo = styled(Image)`
   filter: invert(1);
 `;
 
-const CustomSearchBox = styled(HStack)`
+const CustomSearchBox = styled(HStack)<{ isDarkMode: boolean }>`
   background-color: ${(props) =>
     props.isDarkMode ? "#16161875" : "#ececec75"};
   border-radius: 59px;

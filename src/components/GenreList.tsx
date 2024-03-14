@@ -30,9 +30,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <>
-      <Header fontSize="2xl" marginTop={9} marginBottom={3}>
-        Category
-      </Header>
+      <Header>Category</Header>
       <AsideList isDarkMode={isDarkMode}>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
@@ -74,7 +72,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
 export default GenreList;
 
-const AsideList = styled(List)`
+const AsideList = styled(List)<{ isDarkMode: boolean }>`
   border-right: ${(props) =>
     props.isDarkMode ? "solid 1px #e3cfcf14" : "solid 1px #24232312"};
   padding-right: 15px;
@@ -86,13 +84,13 @@ const Header = styled.h1`
   font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
 `;
 
-const GameGenre = styled.div`
+const GameGenre = styled.div<{ isDarkMode: boolean }>`
   font-size: 15px;
   font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
   text-align: start;
   color: ${(props) => (props.isDarkMode ? "white" : "black")};
 `;
-const GameGenreButton = styled.div`
+const GameGenreButton = styled.div<{ isDarkMode: boolean }>`
   /* background-color: #252529; */
   border-bottom: ${(props) =>
     props.isDarkMode ? "1px solid #ffffff42" : "1px solid #5e595975"};
@@ -106,7 +104,7 @@ const GameGenreButton = styled.div`
     border-bottom: #000000;
   }
 `;
-const GameGenreSelected = styled.div`
+const GameGenreSelected = styled.div<{ isDarkMode: boolean }>`
   font-size: 15px;
   font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
   color: #916210 !important;
