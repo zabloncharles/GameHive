@@ -87,6 +87,12 @@ function App() {
           </Box>
           <GameGrid gameQuery={gameQuery} />
         </GridItem>
+        <FooterContainer>
+          <FooterText>
+            © 2024 Indie Game Wonderland. All rights reserved. | Made with ❤️ by{" "}
+            <FooterLink href="hivearcade.netlify.app">HiveArcade</FooterLink>
+          </FooterText>
+        </FooterContainer>
       </GameResults>
     </Grid>
   );
@@ -95,11 +101,27 @@ function App() {
 export default App;
 
 const GameResults = styled.div`
-  margin-right: 20px;
+  /* margin-right: 20px; */
   overflow: scroll;
 `;
 
-const WholePage = styled.div`
-  overflow: hidden;
-  height: 100vh;
+const FooterContainer = styled.footer`
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+`;
+
+const FooterText = styled.p`
+  font-size: 14px;
+  margin: 0;
+`;
+
+const FooterLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;

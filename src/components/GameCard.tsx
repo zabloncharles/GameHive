@@ -1,6 +1,7 @@
 import {
   Card,
   CardBody,
+  Box,
   Heading,
   HStack,
   Image,
@@ -18,16 +19,22 @@ import styled from "styled-components";
 interface Props {
   game: Game;
 }
-
+interface CustomCardProps {
+  src: string;
+  isDarkMode: boolean;
+}
 const GameCard = ({ game }: Props) => {
   const { colorMode } = useColorMode();
 
   const isDarkMode = colorMode === "dark";
   return (
-    <CustomCard boxShadow="none" isDarkMode={isDarkMode}>
+    <CustomCard
+      isDarkMode={isDarkMode}
+      src={getCroppedImageUrl(game.background_image)}
+    >
       <CustomImage src={getCroppedImageUrl(game.background_image)} />
       <Top>
-        <CardBody>
+        {/* <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>
             <div className="title">{game.name}</div>
           </HStack>
@@ -39,67 +46,81 @@ const GameCard = ({ game }: Props) => {
             <CriticScore score={game.metacritic} />
           </HStack>
           <Emoji rating={game.rating_top} />
-        </CardBody>
+        </CardBody> */}
       </Top>
       <div className="linear"></div>
+      <div className="title">{game.name}</div>
+      <div className="icon-and-desc">
+        <PlatformIconList
+          platforms={game.parent_platforms?.map((p) => p.platform)}
+        />
+        <div className="sentiment">
+          <Emoji rating={game.rating_top} />
+        </div>
+      </div>
+
+      <div className="number">
+        <CriticScore score={game.metacritic} />
+      </div>
     </CustomCard>
   );
 };
 
 export default GameCard;
 
-const CustomImage = styled(Image)``;
-const Top = styled.div`
-  z-index: 1;
+const CustomImage = styled(Image)`
+  z-index: 0;
+  position: relative;
+  border-radius: 17px;
+  padding: 20px;
+  box-shadow: 0px 0px 1px 0px aliceblue;
+  transform: scale(0.95);
 `;
-const CustomCard = styled(Card)<{ isDarkMode: boolean }>`
+const Top = styled.div`
+  z-index: 0;
+`;
+const CustomCard = styled.div<CustomCardProps>`
   /* Custom CSS for the Card component */
 
-  min-width: 166px;
-  min-height: 416px;
-  border-radius: 18px !important;
-  font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  overflow: visible !important;
-
-  gap: 5px;
-  display: flex;
-  border: ${(props) =>
-    !props.isDarkMode ? "1px solid gainsboro !important" : ""};
-  flex-direction: column;
-  text-align: end;
-  cursor: pointer;
-  transition: linear 0.2s;
-  --card-shadow: none !important;
+  background: url(${(props) => props.src});
+  border-radius: 18px;
+  /* padding: 20px; */
+  min-height: 500px;
+  position: relative;
+  font-size: 17px;
+  line-height: 1.2;
+  z-index: 0;
+  width: 100%;
+  border: ${({ isDarkMode }) => (isDarkMode ? "#232323" : "rgb(219 219 219)")}
+    1px solid;
   &:hover {
     transition: linear 0.2s;
     transform: scale(0.908);
   }
   .linear {
-    display: ${(props) => (props.isDarkMode ? "block" : "none")};
     position: absolute;
+    height: 100%;
     width: 100%;
-    height: 40%;
-    top: 107px;
-    /* z-index: 2; */
-    /* backdrop-filter: blur(13px); */
+    z-index: -1;
+    backdrop-filter: blur(23px);
     background-image: linear-gradient(
-      #ff000000,
+      rgba(133, 105, 105, 0),
+      rgba(133, 105, 105, 0),
       var(--chakra-colors-chakra-body-bg),
       var(--chakra-colors-chakra-body-bg)
     );
-    border-radius: 18px;
-    z-index: 0;
+    border-radius: 17px;
+    left: 0px;
+    top: 0px;
   }
   .title {
-    font-size: 18px;
-    font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
-    margin-top: 55px;
     color: var(--chakra-colors-chakra-body-text);
-    text-transform: uppercase;
-    text-align: start;
+    font-family: "Spline Sans Mono", sans-serif;
+    font-size: 33px;
+    line-height: 1.5;
+    padding: 10px 20px;
+    z-index: 0;
+    position: relative;
   }
   .desc {
     font-size: 10px;
@@ -114,17 +135,30 @@ const CustomCard = styled(Card)<{ isDarkMode: boolean }>`
     font-family: "Spline Sans Mono", sans-serif;
   }
   .icon-and-desc {
-    display: flex;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px;
     gap: 10px;
-    align-items: center;
-    justify-content: end;
-  }
-  .project-star-icon {
-    height: 24px;
-    width: 24px;
+    display: flex;
+    flex-direction: column;
 
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/2140px-Golden_star.svg.png);
-    background-size: cover;
-    background-position: center center;
+    font-family: "Spline Sans Mono", sans-serif;
+    font-size: 23px;
+    line-height: 1.5;
+    z-index: 0;
+    position: relative;
+    filter: hue-rotate(45deg);
+
+    .sentiment {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .number {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 0;
   }
 `;
