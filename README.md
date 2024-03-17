@@ -1,4 +1,7 @@
 # HiveArcade
+![logo-white copy](https://github.com/zabloncharles/GameHive/assets/74889517/460e612d-a435-459c-9ccb-de4dbe672679)
+
+
 
 # Live Link [HiveArcade](https://hivearcade.netlify.app/).
 
