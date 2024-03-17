@@ -1,34 +1,37 @@
-# Indie Gems Portal
+# HiveArcade
 
-# Live Link [Indie Gems Portal](https://hivearcade.netlify.app/).
+# Live Link [HiveArcade](https://hivearcade.netlify.app/).
 
 # For Big Screens. Results be like -
 
 ## catogory_searching
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 12 33 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/3c6b47bf-c313-49f0-bff1-3740d4392746">
 
-![Alt text](src/assets/git_reference/big_screen/catogory_searching.png)
 
 ## light_theam
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 11 29 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/a52f0e28-8002-4636-8825-3cc65cc1ee97">
 
-![Alt text](src/assets/git_reference/big_screen/light_theam.png)
+
 
 ## main_look
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 10 47 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/dd9d7bad-e714-42d6-9b77-31ae4309b788">
 
-![Alt text](src/assets/git_reference/big_screen/main_look.png)
+
 
 ## platform_searching
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 12 51 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/9f581e64-6916-4662-9a82-44c627c7bed7">
 
-![Alt text](src/assets/git_reference/big_screen/platform_searching.png)
 
 ## skeliton_loading
 
 ![Alt text](src/assets/git_reference/big_screen/skeliton_loading.png)
 
 # It is Proper responsive
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 12 16 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/b84f13b0-73b8-4475-afaa-fd993a3d95d3">
 
-<img src="src/assets/git_reference/small_screen/responsive_image.png" alt="image" width="auto" height="auto">
 
-Welcome to Indie Gems Portal, a platform where you can search and discover your favorite games based on various categories.
+
+Welcome to HiveArcade, a platform where you can search and discover your favorite games based on various categories.
 
 ## Table of Contents
 
@@ -41,7 +44,7 @@ Welcome to Indie Gems Portal, a platform where you can search and discover your 
 
 ## Introduction
 
-Indie Gems Portal is a web application that allows users to search for games based on genres, platforms, release dates, and ratings. It provides a convenient way to explore and find games that match your preferences.
+HiveArcade is a web application that allows users to search for games based on genres, platforms, release dates, and ratings. It provides a convenient way to explore and find games that match your preferences.
 
 ## Features
 
@@ -52,7 +55,7 @@ Indie Gems Portal is a web application that allows users to search for games bas
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/zabloncharles/hivearcade.git`
-2. Navigate to the project directory: `cd Indie_Gems_Portal`
+2. Navigate to the project directory: `cd HiveArcade`
 3. Install dependencies: `npm install`
 
 ## Usage
@@ -82,6 +85,7 @@ This project is licensed under the [MIT License](LICENSE).
 - chackra-ui
 - https://rawg.io/ `for game DB api`
 - vite
+- styled-components
 
 ---
 
