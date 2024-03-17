@@ -4,6 +4,7 @@
 
 
 # Live Link [HiveArcade](https://hivearcade.netlify.app/).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c19621b5-ee3c-448b-972d-a434f1c18b09/deploy-status)](https://app.netlify.com/sites/hivearcade/deploys)
 
 # Welcome to HiveArcade, a platform where you can search and discover your favorite games based on various categories.
 
