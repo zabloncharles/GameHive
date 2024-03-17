@@ -2,7 +2,7 @@
 
 # Live Link [HiveArcade](https://hivearcade.netlify.app/).
 
-# For Big Screens. Results be like -
+# Welcome to HiveArcade, a platform where you can search and discover your favorite games based on various categories.
 
 ## catogory_searching
 <img width="1520" alt="Screen Shot 2024-03-17 at 1 12 33 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/3c6b47bf-c313-49f0-bff1-3740d4392746">
@@ -31,7 +31,7 @@
 
 
 
-Welcome to HiveArcade, a platform where you can search and discover your favorite games based on various categories.
+
 
 ## Table of Contents
 
