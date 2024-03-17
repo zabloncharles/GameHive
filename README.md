@@ -4,18 +4,13 @@
 
 # Welcome to HiveArcade, a platform where you can search and discover your favorite games based on various categories.
 
-## catogory_searching
-<img width="1520" alt="Screen Shot 2024-03-17 at 1 12 33 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/3c6b47bf-c313-49f0-bff1-3740d4392746">
-
-
-## light_theam
-<img width="1520" alt="Screen Shot 2024-03-17 at 1 11 29 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/a52f0e28-8002-4636-8825-3cc65cc1ee97">
-
-
 
 ## main_look
 <img width="1520" alt="Screen Shot 2024-03-17 at 1 10 47 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/dd9d7bad-e714-42d6-9b77-31ae4309b788">
 
+
+## light_theam
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 11 29 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/a52f0e28-8002-4636-8825-3cc65cc1ee97">
 
 
 ## platform_searching
@@ -30,7 +25,8 @@
 <img width="1520" alt="Screen Shot 2024-03-17 at 1 12 16 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/b84f13b0-73b8-4475-afaa-fd993a3d95d3">
 
 
-
+## catogory_searching
+<img width="1520" alt="Screen Shot 2024-03-17 at 1 12 33 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/3c6b47bf-c313-49f0-bff1-3740d4392746">
 
 
 ## Table of Contents
