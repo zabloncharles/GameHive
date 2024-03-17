@@ -20,10 +20,6 @@
 <img width="1520" alt="Screen Shot 2024-03-17 at 1 12 51 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/9f581e64-6916-4662-9a82-44c627c7bed7">
 
 
-## skeliton_loading
-
-![Alt text](src/assets/git_reference/big_screen/skeliton_loading.png)
-
 # It is Proper responsive
 <img width="1520" alt="Screen Shot 2024-03-17 at 1 12 16 AM" src="https://github.com/zabloncharles/GameHive/assets/74889517/b84f13b0-73b8-4475-afaa-fd993a3d95d3">
 
