@@ -38,5 +38,13 @@ const SimpleGameGrid = styled(Box)`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+
+  /* on iphone */
+  @media screen and (max-width: 1000px) {
+    justify-content: center;
+  }
+
+  /* on desktop */
+  @media screen and (min-width: 999px) {
+  }
 `;

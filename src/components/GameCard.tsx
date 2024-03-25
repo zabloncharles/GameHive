@@ -97,6 +97,10 @@ const CustomCard = styled.div<CustomCardProps>`
   overflow: hidden;
   border: ${({ isDarkMode }) => (isDarkMode ? "#232323" : "rgb(219 219 219)")}
     1px solid;
+
+  @media screen and (min-width: 999px) {
+    max-width: 300px;
+  }
   &:hover {
     transition: linear 0.2s;
     transform: scale(0.989);

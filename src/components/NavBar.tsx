@@ -75,11 +75,14 @@ const MenuResult = styled.div<{ isOpen: boolean }>`
 `;
 const MobileNav = styled.div`
   width: 100%;
+
   @media screen and (min-width: 999px) {
     display: none !important;
   }
 `;
 const WebNav = styled(HStack)`
+  width: 100%;
+  justify-content: space-between;
   @media screen and (max-width: 1000px) {
     display: none !important;
   }
