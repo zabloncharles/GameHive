@@ -1,11 +1,11 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { GameQuery } from "../App";
 import useGames, { Platform } from "../hooks/useGames";
 import { Genre } from "../hooks/useGenres";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-
+import styled from "styled-components";
 interface Props {
   gameQuery: GameQuery;
 }
@@ -17,11 +17,7 @@ const GameGrid = ({ gameQuery }: Props) => {
   if (error) return <Text>{error}</Text>;
 
   return (
-    <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-      padding="10px"
-      spacing={6}
-    >
+    <SimpleGameGrid>
       {isLoading &&
         skeletons.map((skeleton) => (
           <GameCardContainer key={skeleton}>
@@ -29,12 +25,18 @@ const GameGrid = ({ gameQuery }: Props) => {
           </GameCardContainer>
         ))}
       {data.map((game) => (
-        <GameCardContainer key={game.id}>
-          <GameCard game={game} />
-        </GameCardContainer>
+        <GameCard game={game} key={game.id} />
       ))}
-    </SimpleGrid>
+    </SimpleGameGrid>
   );
 };
 
 export default GameGrid;
+const SimpleGameGrid = styled(Box)`
+  // Your styles here
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+`;

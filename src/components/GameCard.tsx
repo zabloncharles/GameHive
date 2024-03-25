@@ -32,7 +32,8 @@ const GameCard = ({ game }: Props) => {
       isDarkMode={isDarkMode}
       src={getCroppedImageUrl(game.background_image)}
     >
-      <CustomImage src={getCroppedImageUrl(game.background_image)} />
+      {/* <CustomImage src={getCroppedImageUrl(game.background_image)} /> */}
+      <div className="image"></div>
       <Top>
         {/* <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>
@@ -56,11 +57,11 @@ const GameCard = ({ game }: Props) => {
         />
         <div className="sentiment">
           <Emoji rating={game.rating_top} />
+          {!game.metacritic && <div></div>}
+          <div className="number">
+            {!game.metacritic ? "No Score" : game.metacritic + "%"}
+          </div>
         </div>
-      </div>
-
-      <div className="number">
-        <CriticScore score={game.metacritic} />
       </div>
     </CustomCard>
   );
@@ -83,19 +84,33 @@ const CustomCard = styled.div<CustomCardProps>`
   /* Custom CSS for the Card component */
 
   background: url(${(props) => props.src});
-  border-radius: 18px;
+  background-position: center;
+  border-radius: 12px;
   /* padding: 20px; */
-  min-height: 500px;
+  min-height: 300px;
   position: relative;
   font-size: 17px;
   line-height: 1.2;
+  padding: 10px 7px;
   z-index: 0;
-  width: 100%;
+  width: calc(100% / 2 - 16px - 0.01px);
+  overflow: hidden;
   border: ${({ isDarkMode }) => (isDarkMode ? "#232323" : "rgb(219 219 219)")}
     1px solid;
   &:hover {
     transition: linear 0.2s;
-    transform: scale(0.908);
+    transform: scale(0.989);
+  }
+  .image {
+    background: url(${(props) => props.src});
+    min-height: 300px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    box-shadow: 3px 5px 11px 5px
+      ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#ffffff")};
+    border-radius: 6px;
   }
   .linear {
     position: absolute;
@@ -103,24 +118,29 @@ const CustomCard = styled.div<CustomCardProps>`
     width: 100%;
     z-index: -1;
     backdrop-filter: blur(23px);
-    background-image: linear-gradient(
-      rgba(133, 105, 105, 0),
-      rgba(133, 105, 105, 0),
-      var(--chakra-colors-chakra-body-bg),
-      var(--chakra-colors-chakra-body-bg)
+    background: linear-gradient(
+      0deg,
+      ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#ffffff")},
+      transparent
     );
-    border-radius: 17px;
     left: 0px;
     top: 0px;
   }
   .title {
     color: var(--chakra-colors-chakra-body-text);
-    font-family: "Spline Sans Mono", sans-serif;
-    font-size: 33px;
-    line-height: 1.5;
-    padding: 10px 20px;
-    z-index: 0;
-    position: relative;
+
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 500;
+    overflow: hidden;
+    display: block;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 1px 5px;
+    border-radius: 12px;
+    backdrop-filter: blur(26px);
+    border: 1px solid #decccc38;
   }
   .desc {
     font-size: 10px;
@@ -137,7 +157,7 @@ const CustomCard = styled.div<CustomCardProps>`
   .icon-and-desc {
     text-transform: uppercase;
     color: white;
-    padding: 10px 20px;
+
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -147,18 +167,25 @@ const CustomCard = styled.div<CustomCardProps>`
     line-height: 1.5;
     z-index: 0;
     position: relative;
-    filter: hue-rotate(45deg);
+
+    padding: 6px 5px;
+    border-radius: 12px;
+    backdrop-filter: brightness(
+      ${({ isDarkMode }) => (isDarkMode ? "0.35" : "0.9")}
+    );
+    border: 1px solid rgba(222, 204, 204, 0.22);
+    margin-top: 10px;
 
     .sentiment {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       gap: 10px;
     }
   }
 
   .number {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 0;
+    font-size: 17px;
+    color: gray;
   }
 `;

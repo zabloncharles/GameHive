@@ -21,7 +21,7 @@ const NavBar = ({ onSearch }: Props) => {
     setIsOpen(!isOpen);
   };
   return (
-    <GameNav>
+    <GameNav isDarkMode={isDarkMode}>
       <MobileNav>
         <IconMode>
           {isDarkMode && <CustomImageLogo src={logo} />}
@@ -96,7 +96,7 @@ const CustomSearchBox = styled(HStack)<{ isDarkMode: boolean }>`
   border-radius: 59px;
   padding: 8px 10px;
 `;
-const GameNav = styled.div`
+const GameNav = styled.div<{ isDarkMode: boolean }>`
   width: 100%;
   padding: 10px;
   padding-left: 35px;
@@ -107,7 +107,12 @@ const GameNav = styled.div`
   display: flex;
   justify-content: space-between;
   font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
-
+  background: linear-gradient(
+    180deg,
+    ${(props) => (props.isDarkMode ? "#000000" : "#ffffff")},
+    ${(props) => (props.isDarkMode ? "#000000" : "#ffffff")},
+    transparent
+  );
   position: fixed;
   z-index: 5;
   @media screen and (max-width: 1000px) {
